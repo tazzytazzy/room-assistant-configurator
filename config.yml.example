@@ -1,0 +1,41 @@
+# This smartly merges into the global settings. Merges allowList and tagOverrides into bluetoothLowEnergy
+# global file.
+#
+# Pretty much copies whatever here to the global settings, but converts tags to tagOverrides and allowList
+
+raCfg:
+  # Generally don't do this. Causes weird issues when all the node go down at once. :\
+  shutdownPeersOnSync: false  # shutdowns all the peers on the start of the config rollout
+  restartServices: true       # start/restart peer's room-assistant service on config rollout.
+  restartSleepTime: 10        # How long to wait for peer to restart. Allows quorum/peers to settle a bit.
+
+bluetoothLowEnergy:
+  tags:
+    501476f99212:
+      name: 'Katniss Everclean'
+      id: katniss-everclean  # Roomba
+    63466d9fef97483a96c45ba3e8fef111-1-1:
+      name: Galaxy S7 Tablet
+      id: galaxy-s7-1
+    63466d9fef97483a96c45ba3e8fef222-1-1:
+      name: 'Mitch Phone'
+      id: mitch-phone
+
+  maxDistance: 15
+
+peers:
+  _defaults:
+    cluster_weight: 5  # or just set in global.yml
+  familypi:
+    comment: RP4 - primary node
+    address: 192.xx.xx.10
+    global_instanceName: "Family Room"
+    cluster_weight: 1000
+  denpi:
+    comment: RPZW - Den
+    address: 192.xx.xx.11
+    global_instanceName: "Den"
+  hallwaypi:
+    comment: RPZW - Hallway
+    address: 192.xx.xx.12
+    global_instanceName: "Hallway"

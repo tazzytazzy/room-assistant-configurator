@@ -1,0 +1,15 @@
+global:
+  integrations:
+    - homeAssistant
+    - bluetoothLowEnergy  # See config.yml for shutcuts to creating this section.
+
+cluster:
+  timeout: 45
+  weight: 5
+
+homeAssistant:
+  mqttUrl: 'mqtt://192.xx.xx.xx:1883'
+  mqttOptions:
+    username: mqtt
+    password: 'SECRETPASSWORD'
+
