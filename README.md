@@ -32,6 +32,10 @@ setting.
 
 Just clone this repository from https://github.com/tazzytazz/racfg
 
+Be sure to install python requirements:
+
+    pip install -r requirements.txt
+
 # Installing room assistant
 
 This assumes a few new raspberry pi is waiting for us. This has been tested on a couple of pi's that have
